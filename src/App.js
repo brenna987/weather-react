@@ -1,15 +1,29 @@
 import React from "react";
-import logo from "./logo.svg";
+
 import "./App.css";
 
-function App() {
+import Forecast from "./Forecast";
+import Search from "./Search";
+import Heading from "./Heading";
+
+export default function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <h1>Hello World!</h1>
-      </header>
+    <div className="container">
+      <div className="outline">
+        <Heading />
+        <Forecast />
+        <Search />
+      </div>
+      <p class="footer">
+        <a
+          href="https://github.com/brenna987/weather-app"
+          target="blank"
+          className="footerLink"
+        >
+          Open-Source Coded
+        </a>{" "}
+        by Brenna G.
+      </p>
     </div>
   );
 }
-
-export default App;

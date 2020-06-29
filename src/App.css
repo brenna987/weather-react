@@ -1,38 +1,152 @@
-.App {
-  text-align: center;
+#time-decoration {
+  border-left: solid;
+  border-left-color: #bdbdbd;
+  border-width: 3px;
+  font-size: 32px;
+  color: #0097a7;
+  font-family: "Asap Condensed", sans-serif;
+  left: 10px;
+}
+#location-button {
+  position: relative;
+  top: 3px;
+  right: 15px;
+  padding: 7px;
+  color: #0097a7;
+  background-color: white;
+  border-color: #0097a7;
+  border-width: 1px;
+  border-radius: 6px;
+  font-size: 17 px;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+#icon {
+  height: 70px;
+  width: 70px;
+  margin-right: 0px;
+  margin-left: -10px;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+#temperature {
+  font-size: 40px;
+  padding-right: 5px;
+  margin-left: 0px;
+}
+#units {
+  top: -15px;
+  position: relative;
+  font-size: 20px;
+  color: #bdbdbd;
+  margin-left: -5px;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+#humidity,
+#wind {
+  font-size: 20px;
+}
+
+.heading {
+  font-size: 32px;
+  color: #0097a7;
+  font-family: "Asap Condensed", sans-serif;
+  font-weight: bolder;
+}
+
+ul {
+  margin: 0;
+  padding: 0px;
+}
+
+li {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  color: rgb(135, 135, 135);
+  font-size: 16px;
+  font-weight: 100;
+  line-height: 19px;
+  text-transform: capitalize;
+}
+
+#units .active {
+  color: #0097a7;
+  cursor: default;
+}
+
+span {
+  font-size: 24px;
+  color: #0097a7;
+  font-family: "Asap Condensed", sans-serif;
+}
+
+.outline {
+  border: solid;
+  padding-left: 40px;
+  padding-bottom: 25px;
+  padding-top: 30px;
+  margin-top: 60px;
+  border-radius: 10px;
+  width: 600px;
+  height: 425px;
+  color: #bdbdbd;
+  background-color: #f6f5f5;
+}
+
+.forecast {
+  margin-left: 55px;
+  margin-bottom: 25px;
+  margin-top: 15px;
+  color: #757575;
+  font-family: "Anonymous Pro", monospace;
+  font-size: 16px;
+}
+body {
+  font-family: "Anonymous Pro", monospace;
+}
+input {
+  width: 400px;
+  border-radius: 3px;
+  height: 40px;
+  padding: 10px;
+  margin-right: 10px;
+}
+
+.btn {
   color: white;
+  background-color: #0097a7;
+  border-color: #0097a7;
+  border-width: 2px;
+  width: 115px;
 }
 
-.App-link {
-  color: #61dafb;
+.btn:hover {
+  background-color: rgb(0, 151, 167, 0.5);
+  transition: ease-in-out;
+  border-color: rgb(0, 151, 167, 0.5);
+  border-width: 2px;
+}
+#location-button {
+  width: 45px;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.footer {
+  color: black;
+  font-size: 12px;
+  margin-top: 5px;
+}
+.footerLink {
+  color: #0097a7;
+}
+a {
+  color: rgb(135, 135, 135);
+}
+.forecast img {
+  height: 35px;
+  width: 35px;
+  margin-bottom: 0px;
+  margin-top: 0px;
+}
+.weather-forecast-temperature {
+  font-size: 16px;
+  text-align: center;
 }
