@@ -5,14 +5,13 @@ import "./App.css";
 import Forecast from "./Forecast";
 import Search from "./Search";
 import Heading from "./Heading";
+import Weather from "./Weather";
 
 export default function App() {
   return (
     <div className="container">
       <div className="outline">
-        <Heading />
-        <Forecast />
-        <Search />
+        <Weather defaultCity="Atlanta" />
       </div>
       <p class="footer">
         <a
