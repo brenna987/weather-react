@@ -3,6 +3,8 @@ import Axios from "axios";
 import FormattedDate from "./FormattedDate";
 import FormattedTime from "./FormattedTime";
 import WeatherIcon from "./WeatherIcon";
+import WeatherUnit from "./WeatherUnit";
+import Forecast from "./Forecast";
 
 export default function Heading(props) {
   return (
@@ -27,19 +29,10 @@ export default function Heading(props) {
           <div class="clearfix float-left">
             <WeatherIcon code={props.data.icon} />
           </div>
-          <span id="temperature">{props.data.temperature}</span>
 
-          <span id="units">
-            <a href="/" id="fahrenheit">
-              {" "}
-              ° F
-            </a>{" "}
-            |
-            <a href="/" id="celsius" class="active">
-              {" "}
-              °C
-            </a>
-          </span>
+          <div className="float-left">
+            <WeatherUnit celsius={props.data.temperature} />
+          </div>
         </div>
         <div class="col-4">
           <ul>

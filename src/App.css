@@ -27,17 +27,18 @@
   margin-left: -10px;
 }
 
-#temperature {
+.temperature {
   font-size: 40px;
   padding-right: 5px;
-  margin-left: 0px;
+  margin-left: 10px;
 }
-#units {
+.unit {
   top: -15px;
   position: relative;
   font-size: 20px;
   color: #bdbdbd;
-  margin-left: -5px;
+  margin-left: 0px;
+  line-height: 1;
 }
 
 #humidity,
@@ -68,7 +69,7 @@ li {
   text-transform: capitalize;
 }
 
-#units .active {
+.units .active {
   color: #0097a7;
   cursor: default;
 }

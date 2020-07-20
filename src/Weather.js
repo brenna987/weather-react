@@ -3,6 +3,7 @@ import axios from "axios";
 import "./App.css";
 import Search from "./Search";
 import Heading from "./Heading";
+import Forecast from "./Forecast";
 
 export default function Weather(props) {
   const [weatherData, setWeatherData] = useState({ ready: false });
@@ -56,6 +57,7 @@ export default function Weather(props) {
           </div>
         </form>
         <Heading data={weatherData} />
+        <Forecast city={weatherData.city} />
       </div>
     );
   } else {

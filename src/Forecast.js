@@ -1,56 +1,28 @@
-import React from "react";
+import React, { useState } from "react";
+import ForecastInfo from "./ForecastInfo";
+import axios from "axios";
 
-export default function Forecast() {
-  return (
-    <div className="forecast">
-      <div className="row weather">
-        <div className="col-2">Wed</div>
-        <div className="col-2">Thu</div>
-        <div className="col-2">Fri</div>
-        <div className="col-2">Sat</div>
-        <div className="col-2">Sun</div>
+export default function Forecast(props) {
+  const [loaded, setLoaded] = useState(false);
+  const [forecast, setForecast] = useState(null);
+
+  function handleForecastResponse(response) {
+    setForecast(response.data);
+    setLoaded(true);
+    console.log(response);
+  }
+
+  if (loaded && props.city === forecast.city.name) {
+    return (
+      <div className="Forecast row">
+        <ForecastInfo data={forecast.list[0]} />
       </div>
-      <br />
-      <div className="row weather">
-        <div className="col-2">
-          <img
-            src="https://keen-booth-bf2023.netlify.app/src/01d.png"
-            alt="icon"
-          />
-        </div>
-        <div className="col-2">
-          <img
-            src="https://keen-booth-bf2023.netlify.app/src/01d.png"
-            alt="icon"
-          />
-        </div>
-        <div className="col-2">
-          <img
-            src="https://keen-booth-bf2023.netlify.app/src/01d.png"
-            alt="icon"
-          />
-        </div>
-        <div className="col-2">
-          <img
-            src="https://keen-booth-bf2023.netlify.app/src/01d.png"
-            alt="icon"
-          />
-        </div>
-        <div className="col-2">
-          <img
-            src="https://keen-booth-bf2023.netlify.app/src/01d.png"
-            alt="icon"
-          />
-        </div>
-      </div>
-      <br />
-      <div className="row weather">
-        <div className="col-2">80°</div>
-        <div className="col-2">75°</div>
-        <div className="col-2">80°</div>
-        <div className="col-2">70°</div>
-        <div className="col-2">73°</div>
-      </div>
-    </div>
-  );
+    );
+  } else {
+    let apiKey = "4b72c972f7597913fe5a676591dd7b39";
+    let url = `https://api.openweathermap.org/data/2.5/forecast?q=${props.city}&appid=${apiKey}&units=metric`;
+    axios.get(url).then(handleForecastResponse);
+
+    return null;
+  }
 }
