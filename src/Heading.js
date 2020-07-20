@@ -4,8 +4,8 @@ import FormattedDate from "./FormattedDate";
 import FormattedTime from "./FormattedTime";
 import WeatherIcon from "./WeatherIcon";
 import WeatherUnit from "./WeatherUnit";
-import Forecast from "./Forecast";
 
+import "./App.css";
 export default function Heading(props) {
   return (
     <div>
