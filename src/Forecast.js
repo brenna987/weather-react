@@ -11,7 +11,6 @@ export default function Forecast(props) {
   function handleForecastResponse(response) {
     setForecast(response.data);
     setLoaded(true);
-    console.log(response);
   }
 
   if (loaded && props.city === forecast.city.name) {

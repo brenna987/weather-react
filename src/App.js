@@ -2,9 +2,6 @@ import React from "react";
 
 import "./App.css";
 
-import Forecast from "./Forecast";
-import Search from "./Search";
-import Heading from "./Heading";
 import Weather from "./Weather";
 
 export default function App() {
@@ -13,7 +10,7 @@ export default function App() {
       <div className="outline">
         <Weather defaultCity="Atlanta" />
       </div>
-      <p class="footer">
+      <p className="footer">
         <a
           href="https://github.com/brenna987/weather-app"
           target="blank"

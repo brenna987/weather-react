@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import axios from "axios";
 import "./App.css";
-import Search from "./Search";
 import Heading from "./Heading";
 import Forecast from "./Forecast";
 
@@ -20,10 +19,11 @@ export default function Weather(props) {
       wind: Math.round(response.data.wind.speed),
       city: response.data.name,
     });
+    console.log(response);
   }
   function handleSubmit(event) {
     event.preventDefault();
-    Search();
+    search();
   }
   function handleCityChange(event) {
     setCity(event.target.value);
@@ -36,28 +36,32 @@ export default function Weather(props) {
   if (weatherData.ready) {
     return (
       <div className="Weather">
-        <form on submit={handleSubmit}>
+        <Heading data={weatherData} />
+        <Forecast city={weatherData.city} />
+
+        <form onSubmit={handleSubmit}>
           <div className="row">
-            <div className="col-9">
+            <div className="col-8">
               <input
                 type="search"
                 placeholder="Enter a city..."
                 className="form-control"
-                autoFocus="on"
+                autoFocus="off"
                 onChange={handleCityChange}
               />
             </div>
-            <div className="col-3">
-              <input
+            <div className="col-2">
+              <button
                 type="submit"
                 value="Search"
-                className="btn btn-primary w-100"
-              />
+                className="btn btn-primary
+                shadow-sm"
+              >
+                Search
+              </button>
             </div>
           </div>
         </form>
-        <Heading data={weatherData} />
-        <Forecast city={weatherData.city} />
       </div>
     );
   } else {

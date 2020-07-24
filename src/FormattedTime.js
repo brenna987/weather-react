@@ -1,4 +1,4 @@
-import React from "react";
+import "./App.css";
 
 export default function FormattedTime(props) {
   let hours = props.time.getHours();
